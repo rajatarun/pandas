@@ -68,6 +68,16 @@ _OFFSET_PARAMETERS = {
         inspect.Parameter.POSITIONAL_OR_KEYWORD,
         default=None,
     ),
+    "week": inspect.Parameter(
+        "week",
+        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        default=0,
+    ),
+    "weekday_zero": inspect.Parameter(
+        "weekday",
+        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        default=0,
+    ),
     "method": inspect.Parameter(
         "method",
         inspect.Parameter.POSITIONAL_OR_KEYWORD,
@@ -267,6 +277,17 @@ _OFFSET_SIGNATURES = {
         "n",
         "normalize",
         "weekday",
+    ),
+    pd.tseries.offsets.WeekOfMonth: (
+        "n",
+        "normalize",
+        "week",
+        "weekday_zero",
+    ),
+    pd.tseries.offsets.LastWeekOfMonth: (
+        "n",
+        "normalize",
+        "weekday_zero",
     ),
     pd.tseries.offsets.Easter: (
         "n",
